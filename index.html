@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giặt Sấy Nhanh 24/7 – the Wash Hub</title>
+    <meta name="description" content="Giặt sấy nhanh 24/7 – sạch thơm, tiện lợi. Nhiều chi nhánh, click xem bản đồ." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="container topbar__wrap">
+            <div class="topbar__left">
+                <span class="chip">📍 <strong id="branchAddressTop">4 Bát Sứ - Hoàn Kiếm</strong></span>
+                <span class="chip">🕒 <strong>24/7</strong></span>
+            </div>
+            <div class="topbar__right">
+                <a class="chip chip--link" id="branchHotlineTopLink" href="tel:0936601683">
+                    ☎ <strong id="branchHotlineTop">0936 601 683</strong>
+                </a>
+                <a class="btn btn--sm btn--primary" href="#dat-lich">Đặt lịch</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__wrap">
+            <a class="brand" href="#">
+                <div class="brand__mark">🧺</div>
+                <div class="brand__text">
+                    <div class="brand__name">the <span>Wash Hub</span></div>
+                    <div class="brand__tag">GIẶT SẤY NHANH 24/7 • EXPRESS SELF SERVICE</div>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <a href="#dich-vu">Dịch vụ</a>
+                <a href="#quy-trinh">Quy trình</a>
+                <a href="#bang-gia">Bảng giá</a>
+                <a href="#chi-nhanh">Chi nhánh</a>
+                <a href="#danh-gia">Đánh giá</a>
+            </nav>
+
+            <div class="header__actions">
+                <a class="btn btn--ghost" href="tel:0936601683">Gọi ngay</a>
+                <a class="btn btn--primary" href="#dat-lich">Đặt lịch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO: style giống ảnh ý tưởng (overlay + bubbles + machines center + clouds) -->
+    <section class="hero2">
+        <!-- Background image (bạn thay ảnh theo ý muốn) -->
+        <div class="hero2__bg" aria-hidden="true"></div>
+
+        <!-- Bubbles -->
+        <div class="bubbles" aria-hidden="true">
+            <span class="bubble b1"></span>
+            <span class="bubble b2"></span>
+            <span class="bubble b3"></span>
+            <span class="bubble b4"></span>
+            <span class="bubble b5"></span>
+            <span class="bubble b6"></span>
+        </div>
+
+        <div class="container hero2__inner">
+            <div class="hero2__headline">
+                <div class="badge">GIẶT SẤY NHANH • 24/7</div>
+                <h1 class="hero2__title">the <span class="accent">Wash Hub</span></h1>
+                <div class="hero2__sub">
+                    FAST • CLEAN • AFFORDABLE • CONVENIENT<br />
+                    <span>24/7 | SELF - SERVICE | LAUNDROMAT</span>
+                </div>
+
+                <div class="hero2__cta">
+                    <a class="btn btn--primary" href="#chi-nhanh">Chọn chi nhánh</a>
+                    <a class="btn btn--ghost" href="#bang-gia">Xem bảng giá</a>
+                </div>
+            </div>
+
+            <!-- Machines center -->
+            <!-- <div class="hero2__machines">
+        <img src="assets/machines.jpg" alt="Hệ thống máy giặt sấy" />
+        <div class="machines__glow" aria-hidden="true"></div>
+      </div> -->
+
+            <!-- Quick info chips -->
+            <div class="hero2__chips">
+                <div class="pill">✅ Máy công nghiệp</div>
+                <div class="pill">🌬 Sấy nhanh</div>
+                <div class="pill">🚚 Giao nhận (tuỳ CN)</div>
+                <div class="pill">🧼 Sạch thơm</div>
+            </div>
+        </div>
+
+        <!-- Clouds divider -->
+        <div class="cloud cloud--idea cloud--down" aria-hidden="true">
+            <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+                <path d="M0,92
+          C110,30 220,30 330,92
+          C440,154 550,154 660,92
+          C770,30 880,30 990,92
+          C1100,154 1210,154 1320,92
+          C1380,60 1410,60 1440,92
+          L1440,140 L0,140 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section section--soft" id="dich-vu">
+        <div class="container">
+            <div class="section__head">
+                <h2>Dịch vụ nổi bật</h2>
+                <p>Giặt sấy nhanh – sạch thơm – tiện lợi theo phong cách landing dịch vụ.</p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="icon">🧺</div>
+                    <h3>Giặt + Sấy theo kg</h3>
+                    <p>Giặt sạch, sấy khô, xếp gọn. Phù hợp đồ hằng ngày.</p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">🛏</div>
+                    <h3>Chăn mền, rèm</h3>
+                    <p>Khử mùi, làm sạch sâu. Đóng gói cẩn thận khi giao.</p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">👔</div>
+                    <h3>Đồ cao cấp</h3>
+                    <p>Vest/đầm/áo khoác… xử lý riêng theo chất liệu.</p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">🚚</div>
+                    <h3>Nhận & giao tận nơi</h3>
+                    <p>Tiết kiệm thời gian. Hẹn giờ linh hoạt (tuỳ chi nhánh).</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="cloud cloud--down cloud--soft" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path
+                    d="M0,72 C120,20 240,20 360,72 C480,124 600,124 720,72 C840,20 960,20 1080,72 C1200,124 1320,124 1440,72 L1440,120 L0,120 Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+    <section class="section" id="chi-nhanh">
+        <div class="container">
+            <div class="section__head section__head--row">
+                <div>
+                    <h2>5 chi nhánh</h2>
+                    <p>Chọn cơ sở để xem ảnh + thông tin + dịch vụ + liên hệ.</p>
+                </div>
+                <div class="current">
+                    <span class="current__label">Đang chọn:</span>
+                    <span class="current__name" id="branchName">Cơ sở 1</span>
+                </div>
+            </div>
+
+            <!-- ALL-IN-IMAGE WRAP -->
+            <div class="branch-wrap">
+                <img id="branchHeroImg" class="branch-wrap__img" src="assets/machines.jpg" alt="Ảnh cơ sở" />
+
+                <div class="branch-wrap__shade" aria-hidden="true"></div>
+
+                <!-- Nội dung bọc trong ảnh -->
+
+                <div class="branch-wrap__content">
+                    <!-- Tabs (trên cùng) -->
+                    <div class="branch-tabs2">
+                        <button class="btab2 is-active" data-branch="1">
+                            <div class="branch-tab__title">Chi nhánh 1</div>
+                            <div class="branch-tab__sub">4 Bát Sứ - Hoàn Kiếm</div>
+                        </button>
+
+                        <button class="btab2" data-branch="2">
+                            <div class="branch-tab__title">Chi nhánh 2</div>
+                            <div class="branch-tab__sub">Địa chỉ chi nhánh 2</div>
+                        </button>
+
+                        <button class="btab2" data-branch="3">
+                            <div class="branch-tab__title">Chi nhánh 3</div>
+                            <div class="branch-tab__sub">Địa chỉ chi nhánh 3</div>
+                        </button>
+
+                        <button class="btab2" data-branch="4">
+                            <div class="branch-tab__title">Chi nhánh 4</div>
+                            <div class="branch-tab__sub">Địa chỉ chi nhánh 4</div>
+                        </button>
+
+                        <button class="btab2" data-branch="5">
+                            <div class="branch-tab__title">Chi nhánh 5</div>
+                            <div class="branch-tab__sub">Địa chỉ chi nhánh 5</div>
+                        </button>
+                    </div>
+                    <!-- BRANCH DETAIL – HIỂN THỊ TRONG ẢNH -->
+                    <div class="branch-detail-wrap" style="padding-top: 4%;">
+                        <div class="branch-detail">
+
+                            <!-- LEFT INFO -->
+                            <div class="branch-detail__left">
+                                <h3 id="bd-name">Chi nhánh 1</h3>
+                                <p id="bd-desc">Chi nhánh trung tâm, giặt sấy nhanh 24/7.</p>
+
+                                <div class="bd-meta">
+                                    <div>📍 <span id="bd-address"></span></div>
+                                    <div>📞 <a id="bd-phone" href="#"></a></div>
+                                </div>
+
+                                <h4 class="bd-section-title">Dịch vụ</h4>
+
+<div class="bd-services" id="bd-services">
+  <!-- render bằng JS -->
+</div>
+
+                            </div>
+
+                            <!-- RIGHT -->
+                            <div class="branch-detail__right">
+                                <div class="bd-gallery">
+                                    <img id="bd-main-img" src="" alt="Ảnh chi nhánh">
+                                    <div class="bd-thumbs" id="bd-thumbs"></div>
+                                </div>
+
+                                <div class="bd-map">
+                                    <iframe id="bd-map" loading="lazy"></iframe>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROCESS -->
+    <section class="section" id="quy-trinh">
+        <div class="container">
+            <div class="section__head">
+                <h2>Quy trình 4 bước</h2>
+                <p>Đơn giản, nhanh chóng, rõ ràng.</p>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step__n">1</div>
+                    <h3>Đặt lịch</h3>
+                    <p>Gọi điện hoặc điền form.</p>
+                </div>
+                <div class="step">
+                    <div class="step__n">2</div>
+                    <h3>Nhận đồ</h3>
+                    <p>Nhận tận nơi hoặc mang đến tiệm.</p>
+                </div>
+                <div class="step">
+                    <div class="step__n">3</div>
+                    <h3>Giặt – Sấy</h3>
+                    <p>Giặt sạch, sấy khô, khử mùi.</p>
+                </div>
+                <div class="step">
+                    <div class="step__n">4</div>
+                    <h3>Giao lại</h3>
+                    <p>Giao đúng hẹn, đóng gói gọn.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cloud cloud--down cloud--soft" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path
+                    d="M0,72 C120,20 240,20 360,72 C480,124 600,124 720,72 C840,20 960,20 1080,72 C1200,124 1320,124 1440,72 L1440,120 L0,120 Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section section--soft" id="bang-gia">
+        <div class="container">
+            <div class="section__head section__head--row">
+                <div>
+                    <h2>Bảng giá tham khảo</h2>
+                    <p>Giá mẫu – bạn chỉnh theo thực tế từng chi nhánh.</p>
+                </div>
+                <a class="btn btn--ghost" href="#dat-lich">Nhận báo giá</a>
+            </div>
+
+            <div class="pricing">
+                <div class="price-table">
+                    <div class="price-row price-row--head">
+                        <div>Dịch vụ</div>
+                        <div>Giá</div>
+                    </div>
+                    <div class="price-row">
+                        <div>Giặt + Sấy theo kg</div>
+                        <div class="price">từ xđ/kg</div>
+                    </div>
+                    <div class="price-row">
+                        <div>Giặt nhanh trong ngày</div>
+                        <div class="price">+xđ</div>
+                    </div>
+                    <div class="price-row">
+                        <div>Giặt chăn mền</div>
+                        <div class="price">từ xđ</div>
+                    </div>
+                    <div class="price-row">
+                        <div>Đồ cao cấp (vest/đầm)</div>
+                        <div class="price">từ xđ</div>
+                    </div>
+                </div>
+
+                <div class="promo" id="dat-lich">
+                    <div class="promo__tag">ĐẶT LỊCH NHANH</div>
+                    <h3>Nhận đồ tận nơi</h3>
+                    <p>Điền form – mình gọi xác nhận ngay.</p>
+
+                    <form
+                        onsubmit="event.preventDefault(); alert('Demo: Bạn nối API/Telegram/Zalo để nhận data form nhé!');">
+                        <div class="row">
+                            <div class="field">
+                                <label>Họ & tên</label>
+                                <input required placeholder="VD: Rin Le" />
+                            </div>
+                            <div class="field">
+                                <label>Số điện thoại</label>
+                                <input required type="tel" placeholder="VD: 0936 601 683" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Địa chỉ nhận đồ</label>
+                            <input required placeholder="Số nhà, đường, quận/huyện..." />
+                        </div>
+                        <button class="btn btn--primary btn--full" type="submit">Gửi yêu cầu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="cloud cloud--down cloud--white" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path
+                    d="M0,72 C120,20 240,20 360,72 C480,124 600,124 720,72 C840,20 960,20 1080,72 C1200,124 1320,124 1440,72 L1440,120 L0,120 Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+
+
+    <!-- REVIEWS -->
+    <!-- <section class="section section--soft" id="danh-gia">
+    <div class="container">
+      <div class="section__head">
+        <h2>Khách hàng nói gì</h2>
+        <p>Review dạng landing dịch vụ.</p>
+      </div>
+
+      <div class="quotes">
+        <article class="quote">
+          <div class="stars">★★★★★</div>
+          <p>“Đồ sạch, thơm, gấp rất gọn. Giao đúng giờ.”</p>
+          <div class="who">Ngọc Anh</div>
+        </article>
+
+        <article class="quote">
+          <div class="stars">★★★★★</div>
+          <p>“Giặt riêng nên yên tâm, giá hợp lý, tư vấn nhiệt tình.”</p>
+          <div class="who">Minh Khôi</div>
+        </article>
+
+        <article class="quote">
+          <div class="stars">★★★★★</div>
+          <p>“Chăn mền giặt sạch, đóng gói cẩn thận. Sẽ ủng hộ tiếp.”</p>
+          <div class="who">Thảo Vy</div>
+        </article>
+      </div>
+    </div>
+  </section> -->
+
+    <!-- CTA -->
+    <!-- <section class="cta">
+    <div class="container cta__box">
+      <div>
+        <h2>Giặt sấy 24/7 – tiện như ở nhà ✨</h2>
+        <p>Nhận & giao tận nơi • Tự giặt tại tiệm • Cam kết hài lòng</p>
+      </div>
+      <div class="cta__actions">
+        <a class="btn btn--ghost" href="tel:0936601683">☎ 0936 601 683</a>
+        <a class="btn btn--primary" href="#dat-lich">Đặt lịch</a>
+      </div>
+    </div>
+
+    <div class="cloud cloud--down cloud--soft" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,72 C120,20 240,20 360,72 C480,124 600,124 720,72 C840,20 960,20 1080,72 C1200,124 1320,124 1440,72 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+  </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__wrap">
+            <div>© <span id="year"></span> the Wash Hub • <span id="branchAddressFooter">4 Bát Sứ - Hoàn Kiếm</span>
+            </div>
+            <div>
+                Hotline: <a id="branchHotlineFooterLink" href="tel:0936601683"><span id="branchHotlineFooter">0936 601
+                        683</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="branchModal" aria-hidden="true">
+        <div class="modal__backdrop" data-close="1"></div>
+
+        <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal__head">
+                <div>
+                    <div class="modal__kicker">Thông tin chi nhánh</div>
+                    <h3 class="modal__title" id="modalTitle">Chi nhánh</h3>
+                </div>
+                <button class="modal__close" type="button" aria-label="Đóng" data-close="1">✕</button>
+            </div>
+
+            <div class="modal__body">
+                <div class="modal__photo">
+                    <img src="assets/machines.jpg" alt="Ảnh cửa hàng" />
+                </div>
+
+                <div class="modal__info">
+                    <div class="info-row">
+                        <div class="info-label">Địa chỉ</div>
+                        <div class="info-value" id="modalAddress">—</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Hotline</div>
+                        <div class="info-value"><a id="modalHotlineLink" href="#">—</a></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Giờ mở cửa</div>
+                        <div class="info-value" id="modalHours">24/7</div>
+                    </div>
+
+                    <div class="modal__actions">
+                        <a class="btn btn--primary" id="modalCallBtn" href="#">📞 Gọi chi nhánh</a>
+                        <a class="btn btn--ghost" id="modalDirectionsBtn" href="#" target="_blank" rel="noopener">🧭 Chỉ
+                            đường</a>
+                    </div>
+                </div>
+
+                <div class="modal__map">
+                    <iframe id="modalMap" title="Bản đồ chi nhánh" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const BRANCHES = {
+            1: {
+                name: "Chi nhánh 1",
+                desc: "Chi nhánh trung tâm, giặt sấy nhanh 24/7.",
+                address: "4 Bát Sứ – Hoàn Kiếm",
+                phone: "0936601683",
+                services: ["Giặt + sấy", "Chăn mền", "Đồ cao cấp"],
+                images: [
+                    "assets/shop.jpg",
+                    "assets/machines.jpg",
+                    "assets/storefront.jpg"
+                ],
+                map: "https://www.google.com/maps?q=4%20B%C3%A1t%20S%E1%BB%A9%20Ho%C3%A0n%20Ki%E1%BA%BFm&output=embed"
+            },
+            2: {
+                name: "Chi nhánh 2",
+                desc: "Không gian rộng, máy mới.",
+                address: "Địa chỉ chi nhánh 2",
+                phone: "0900111222",
+                services: ["Giặt sấy", "Giao nhận"],
+                images: [
+                    "assets/branch/2/1.jpg",
+                    "assets/branch/2/2.jpg"
+                ],
+                map: "https://www.google.com/maps?q=H%C3%A0%20N%E1%BB%99i&output=embed"
+            }
+        };
+
+        function renderBranch(id) {
+            const b = BRANCHES[id];
+            if (!b) return;
+
+            document.getElementById("bd-name").innerText = b.name;
+            document.getElementById("bd-desc").innerText = b.desc;
+            document.getElementById("bd-address").innerText = b.address;
+
+            const phone = document.getElementById("bd-phone");
+            phone.innerText = b.phone;
+            phone.href = "tel:" + b.phone;
+
+            const box = document.getElementById("bd-services");
+box.innerHTML = "";
+
+b.services.forEach(s => {
+  const div = document.createElement("div");
+  div.className = "service-card";
+  div.innerHTML = `
+    <div class="service-icon">🧺</div>
+    <div>
+      <div class="service-title">${s}</div>
+      <div class="service-desc">
+        ${s.includes("sấy") ? "Nhanh – sạch – tiết kiệm thời gian" :
+          s.includes("Chăn") ? "Xử lý đồ lớn, khử mùi sâu" :
+          "Giặt riêng, an toàn chất liệu"}
+      </div>
+    </div>
+  `;
+  box.appendChild(div);
+});
+
+
+            // gallery
+            const mainImg = document.getElementById("bd-main-img");
+            const thumbs = document.getElementById("bd-thumbs");
+            thumbs.innerHTML = "";
+            mainImg.src = b.images[0];
+
+            b.images.forEach((img, i) => {
+                const t = document.createElement("img");
+                t.src = img;
+                if (i === 0) t.classList.add("active");
+                t.onclick = () => {
+                    mainImg.src = img;
+                    thumbs.querySelectorAll("img").forEach(x => x.classList.remove("active"));
+                    t.classList.add("active");
+                };
+                thumbs.appendChild(t);
+            });
+
+            document.getElementById("bd-map").src = b.map;
+        }
+
+        // tab click
+        document.querySelectorAll(".btab2").forEach(btn => {
+            btn.onclick = () => {
+                document.querySelectorAll(".btab2").forEach(b => b.classList.remove("is-active"));
+                btn.classList.add("is-active");
+                renderBranch(btn.dataset.branch);
+            };
+        });
+
+        // init default
+        renderBranch(1);
+    </script>
+
+
+</body>
+
+</html>
