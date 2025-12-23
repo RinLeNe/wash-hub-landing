@@ -1601,6 +1601,7 @@ body{
     gap:14px;
   }
 
+  /* Ảnh thumbnail trong card */
   .btab2__thumb{
     width:72px;
     height:72px;
@@ -1608,6 +1609,7 @@ body{
     flex-shrink:0;
   }
 
+  /* Text canh trái rõ ràng */
   .branch-tab__title{
     font-size:16px;
   }
