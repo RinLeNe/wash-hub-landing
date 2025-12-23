@@ -46,15 +46,14 @@
             </nav>
 
             <div class="header__actions">
+                
                 <a class="btn btn--ghost" href="tel:0936601683">Gọi ngay</a>
                 <a class="btn btn--primary" href="#dat-lich">Đặt lịch</a>
             </div>
         </div>
     </header>
 
-    <!-- HERO: style giống ảnh ý tưởng (overlay + bubbles + machines center + clouds) -->
     <section class="hero2">
-        <!-- Background image (bạn thay ảnh theo ý muốn) -->
         <div class="hero2__bg" aria-hidden="true"></div>
 
         <!-- Bubbles -->
@@ -179,28 +178,58 @@
                     <!-- Tabs (trên cùng) -->
                     <div class="branch-tabs2">
                         <button class="btab2 is-active" data-branch="1">
-                            <div class="branch-tab__title">Chi nhánh 1</div>
-                            <div class="branch-tab__sub">4 Bát Sứ - Hoàn Kiếm</div>
+                            <div class="btab2__thumb">
+                                <img src="assets/storefront.jpg" alt="Chi nhánh 1">
+                            </div>
+
+                            <div class="btab2__text">
+                                <div class="btab2__title">Chi nhánh 1</div>
+                                <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
+                            </div>
                         </button>
 
                         <button class="btab2" data-branch="2">
-                            <div class="branch-tab__title">Chi nhánh 2</div>
-                            <div class="branch-tab__sub">Địa chỉ chi nhánh 2</div>
+                            <div class="btab2__thumb">
+                                <img src="assets/storefront.jpg" alt="Chi nhánh 2">
+                            </div>
+
+                            <div class="btab2__text">
+                                <div class="btab2__title">Chi nhánh 2</div>
+                                <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
+                            </div>
                         </button>
 
                         <button class="btab2" data-branch="3">
-                            <div class="branch-tab__title">Chi nhánh 3</div>
-                            <div class="branch-tab__sub">Địa chỉ chi nhánh 3</div>
+                            <div class="btab2__thumb">
+                                <img src="assets/storefront.jpg" alt="Chi nhánh 3">
+                            </div>
+
+                            <div class="btab2__text">
+                                <div class="btab2__title">Chi nhánh 3</div>
+                                <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
+                            </div>
                         </button>
 
                         <button class="btab2" data-branch="4">
-                            <div class="branch-tab__title">Chi nhánh 4</div>
-                            <div class="branch-tab__sub">Địa chỉ chi nhánh 4</div>
+                            <div class="btab2__thumb">
+                                <img src="assets/storefront.jpg" alt="Chi nhánh 4">
+                            </div>
+
+                            <div class="btab2__text">
+                                <div class="btab2__title">Chi nhánh 4</div>
+                                <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
+                            </div>
                         </button>
 
                         <button class="btab2" data-branch="5">
-                            <div class="branch-tab__title">Chi nhánh 5</div>
-                            <div class="branch-tab__sub">Địa chỉ chi nhánh 5</div>
+                            <div class="btab2__thumb">
+                                <img src="assets/storefront.jpg" alt="Chi nhánh 5">
+                            </div>
+
+                            <div class="btab2__text">
+                                <div class="btab2__title">Chi nhánh 5</div>
+                                <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
+                            </div>
                         </button>
                     </div>
                     <!-- BRANCH DETAIL – HIỂN THỊ TRONG ẢNH -->
@@ -219,9 +248,9 @@
 
                                 <h4 class="bd-section-title">Dịch vụ</h4>
 
-<div class="bd-services" id="bd-services">
-  <!-- render bằng JS -->
-</div>
+                                <div class="bd-services" id="bd-services">
+                                    <!-- render bằng JS -->
+                                </div>
 
                             </div>
 
@@ -514,24 +543,24 @@
             phone.href = "tel:" + b.phone;
 
             const box = document.getElementById("bd-services");
-box.innerHTML = "";
+            box.innerHTML = "";
 
-b.services.forEach(s => {
-  const div = document.createElement("div");
-  div.className = "service-card";
-  div.innerHTML = `
+            b.services.forEach(s => {
+                const div = document.createElement("div");
+                div.className = "service-card";
+                div.innerHTML = `
     <div class="service-icon">🧺</div>
     <div>
       <div class="service-title">${s}</div>
       <div class="service-desc">
         ${s.includes("sấy") ? "Nhanh – sạch – tiết kiệm thời gian" :
-          s.includes("Chăn") ? "Xử lý đồ lớn, khử mùi sâu" :
-          "Giặt riêng, an toàn chất liệu"}
+                        s.includes("Chăn") ? "Xử lý đồ lớn, khử mùi sâu" :
+                            "Giặt riêng, an toàn chất liệu"}
       </div>
     </div>
   `;
-  box.appendChild(div);
-});
+                box.appendChild(div);
+            });
 
 
             // gallery
