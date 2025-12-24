@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Giặt Sấy Nhanh 24/7 – the Wash Hub</title>
-    <meta name="description" content="Giặt sấy nhanh 24/7 – sạch thơm, tiện lợi. Nhiều chi nhánh, click xem bản đồ." />
+    <title data-i18n="meta.title">Giặt Sấy Nhanh 24/7 – the Wash Hub</title>
+    <meta data-i18n-content="meta.desc" name="description"
+        content="Giặt sấy nhanh 24/7 – sạch thơm, tiện lợi. Nhiều chi nhánh, click xem bản đồ." />
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -14,8 +15,8 @@
     <div class="topbar">
         <div class="container topbar__wrap">
             <div class="topbar__left">
-                <span class="chip"><strong id="branchAddressTop">4 Bát Sứ - Hoàn Kiếm</strong></span>
-                <span class="chip"><strong>24/7</strong></span>
+                <span class="chip">📍 <strong id="branchAddressTop">4 Bát Sứ - Hoàn Kiếm</strong></span>
+                <span class="chip">🕒 <strong>24/7</strong></span>
             </div>
             <div class="topbar__right">
                 <a class="chip chip--link" id="branchHotlineTopLink" href="tel:0936601683">
@@ -33,22 +34,27 @@
                 <div class="brand__mark">🧺</div>
                 <div class="brand__text">
                     <div class="brand__name">the <span>Wash Hub</span></div>
-                    <div class="brand__tag">GIẶT SẤY NHANH 24/7 • EXPRESS SELF SERVICE</div>
+                    <div class="brand__tag" data-i18n="site.tagline">GIẶT SẤY NHANH 24/7 • EXPRESS SELF SERVICE</div>
                 </div>
             </a>
 
             <nav class="nav">
-                <a href="#dich-vu">Dịch vụ</a>
-                <a href="#quy-trinh">Quy trình</a>
-                <a href="#bang-gia">Bảng giá</a>
-                <a href="#chi-nhanh">Chi nhánh</a>
-                <a href="#danh-gia">Đánh giá</a>
+                <a href="#dich-vu" data-i18n="nav.services">Dịch vụ</a>
+                <a href="#quy-trinh" data-i18n="nav.process">Quy trình</a>
+                <a href="#bang-gia" data-i18n="nav.pricing">Bảng giá</a>
+                <a href="#chi-nhanh" data-i18n="nav.branches">Chi nhánh</a>
             </nav>
 
             <div class="header__actions">
+                <div class="lang-inline">
+                    <button class="lang-btn is-active" data-lang="vi">VI</button>
+                    <span class="lang-sep">/</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a class="btn btn--ghost" href="tel:0936601683" data-i18n="btn.call">Gọi ngay</a>
+                <a class="btn btn--primary" href="#dat-lich" data-i18n="btn.book">Đặt lịch</a>
 
-                <a class="btn btn--ghost" href="tel:0936601683">Gọi ngay</a>
-                <a class="btn btn--primary" href="#dat-lich">Đặt lịch</a>
+
             </div>
         </div>
     </header>
@@ -68,7 +74,7 @@
 
         <div class="container hero2__inner">
             <div class="hero2__headline">
-                <div class="badge">GIẶT SẤY NHANH • 24/7</div>
+                <div class="badge" data-i18n="hero.badge">GIẶT SẤY NHANH • 24/7</div>
                 <h1 class="hero2__title">the <span class="accent">Wash Hub</span></h1>
                 <div class="hero2__sub">
                     FAST • CLEAN • AFFORDABLE • CONVENIENT<br />
@@ -76,8 +82,8 @@
                 </div>
 
                 <div class="hero2__cta">
-                    <a class="btn btn--primary" href="#chi-nhanh">Chọn chi nhánh</a>
-                    <a class="btn btn--ghost" href="#bang-gia">Xem bảng giá</a>
+                    <a class="btn btn--primary" href="#chi-nhanh" data-i18n="btn.select_branch">Chọn chi nhánh</a>
+                    <a class="btn btn--ghost" href="#bang-gia" data-i18n="btn.view_price">Xem bảng giá</a>
                 </div>
             </div>
 
@@ -114,27 +120,27 @@
     <section class="section section--soft" id="dich-vu">
         <div class="container">
             <div class="section__head">
-                <h2>Dịch vụ nổi bật</h2>
-                <p>Giặt sấy nhanh – sạch thơm – tiện lợi.</p>
+                <h2 data-i18n="service.title">Dịch vụ nổi bật</h2>
+                <p data-i18n="service.desc">Giặt sấy nhanh – sạch thơm – tiện lợi.</p>
             </div>
 
             <div class="cards">
                 <article class="card">
                     <div class="icon">🧺</div>
-                    <h3>Giặt + Sấy theo kg</h3>
-                    <p>Giặt sạch, sấy khô, xếp gọn. Phù hợp đồ hằng ngày.</p>
+                    <h3 data-i18n="service.wash">Giặt + Sấy theo kg</h3>
+                    <p data-i18n="service.wash.desc">Giặt sạch, sấy khô, xếp gọn. Phù hợp đồ hằng ngày.</p>
                 </article>
 
                 <article class="card">
                     <div class="icon">🛏</div>
-                    <h3>Chăn mền, rèm</h3>
-                    <p>Khử mùi, làm sạch sâu. Đóng gói cẩn thận khi giao.</p>
+                    <h3 data-i18n="service.soft">Chăn mền, rèm</h3>
+                    <p data-i18n="service.soft.desc">Khử mùi, làm sạch sâu. Đóng gói cẩn thận khi giao.</p>
                 </article>
 
                 <article class="card">
                     <div class="icon">👔</div>
-                    <h3>Đồ cao cấp</h3>
-                    <p>Vest/đầm/áo khoác… xử lý riêng theo chất liệu.</p>
+                    <h3 data-i18n="service.premium">Đồ cao cấp</h3>
+                    <p data-i18n="service.premium.desc">Vest/đầm/áo khoác… xử lý riêng theo chất liệu.</p>
                 </article>
 
                 <article class="card">
@@ -350,8 +356,7 @@
                     <h3>Nhận đồ tận nơi</h3>
                     <p>Điền form – mình gọi xác nhận ngay.</p>
 
-                    <form
-                        onsubmit="event.preventDefault(); alert('Demo');">
+                    <form onsubmit="event.preventDefault(); alert('Demo');">
                         <div class="row">
                             <div class="field">
                                 <label>Họ & tên</label>
@@ -648,9 +653,8 @@
         // init default
         renderBranch(1);
     </script>
-
+    <script src="lang.js"></script>
 
 </body>
 
 </html>
-
