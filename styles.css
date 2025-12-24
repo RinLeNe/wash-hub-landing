@@ -1737,7 +1737,6 @@ body{
     margin-top: -6px;
   }
 }
-
 @media (max-width: 900px) {
 
   /* khi accordion mở → ảnh không kéo dài */
@@ -1750,4 +1749,53 @@ body{
     height: 260px;
   }
 }
+/* ===== FIX IMAGE STRETCH ON MOBILE ===== */
+@media (max-width: 900px) {
 
+  /* KHÓA container */
+  .branch-wrap {
+    min-height: unset;
+    height: auto;
+    overflow: hidden;
+  }
+
+  /* Ảnh nền: KHÔNG absolute nữa */
+  .branch-wrap__img {
+    position: relative;
+    width: 100%;
+    height: 260px;            /* CHIỀU CAO CỐ ĐỊNH */
+    object-fit: cover;
+    object-position: center top;
+    transform: none;
+  }
+
+  /* overlay chỉ phủ phần ảnh */
+  .branch-wrap__shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 260px;            /* = ảnh */
+  }
+
+  /* nội dung TÁCH RA KHỎI ẢNH */
+  .branch-wrap__content {
+    position: relative;
+    padding: 10px;
+    background: transparent;
+  }
+}
+@media (max-width: 900px) {
+
+  .branch-wrap {
+    border-radius: 22px;
+  }
+
+  .branch-wrap__img {
+    border-radius: 22px 22px 0 0;
+  }
+
+  .branch-wrap__content {
+    margin-top: -8px;
+  }
+}
