@@ -1561,149 +1561,7 @@ body{
   border-radius:4px;
   background:linear-gradient(180deg,var(--orange),var(--orange2));
 }
-/* ===== MOBILE ACCORDION FOR BRANCH ===== */
-@media (max-width: 900px) {
-  /* Ẩn chi tiết mặc định */
-  .branch-detail-wrap {
-    display: none;
-    padding-top: 0 !important;
-  }
 
-  /* Khi mở accordion */
-  .branch-detail-wrap.is-open {
-    display: block;
-    animation: branchSlideDown .35s ease;
-  }
-
-  /* Chi tiết gọn hơn cho mobile */
-  .branch-detail {
-    grid-template-columns: 1fr;
-    padding: 16px;
-  }
-
-  .branch-detail__right {
-    grid-template-rows: auto auto;
-  }
-
-  .bd-gallery img {
-    height: 160px;
-  }
-
-  .bd-map iframe {
-    height: 160px;
-  }
-}
-
-@keyframes branchSlideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* ===== MOBILE: Branch accordion under tab ===== */
-@media (max-width: 900px) {
-
-  .branch-detail-wrap {
-    margin-top: 10px;
-    padding-top: 0 !important;
-  }
-
-  .branch-detail-wrap.is-accordion {
-    animation: accordionDown .35s ease;
-  }
-
-  .branch-detail {
-    grid-template-columns: 1fr;
-    padding: 16px 16px 18px;
-  }
-
-  /* thu gọn cho mobile */
-  .bd-gallery img { height: 150px; }
-  .bd-map iframe { height: 150px; }
-
-  /* icon mở / đóng */
-  .btab2 {
-    position: relative;
-  }
-
-  .btab2::after {
-    content: "▼";
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: 900;
-    opacity: .4;
-    transition: .25s ease;
-  }
-
-  .btab2.is-open::after {
-    transform: translateY(-50%) rotate(180deg);
-    opacity: .9;
-    color: var(--orange);
-  }
-}
-
-@keyframes accordionDown {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* ===== MOBILE: hide branch detail by default ===== */
-@media (max-width: 900px) {
-
-  .branch-detail-wrap {
-    display: none;
-    margin-top: 12px;
-  }
-
-  .branch-detail-wrap.is-open {
-    display: block;
-    animation: accordionDown .35s ease;
-  }
-
-  /* icon */
-  .btab2 {
-    position: relative;
-  }
-
-  .btab2::after {
-    content: "▼";
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: 900;
-    opacity: .4;
-    transition: .25s ease;
-  }
-
-  .btab2.is-open::after {
-    transform: translateY(-50%) rotate(180deg);
-    opacity: 1;
-    color: var(--orange);
-  }
-}
-
-@keyframes accordionDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* ===============================
    MOBILE: ảnh + content CHUNG FORM
    =============================== */
@@ -1755,5 +1613,113 @@ body{
   /* 5. Khi mở → ảnh GIÃN VỪA ĐỦ */
   .branch-wrap.is-open .branch-detail-wrap{
     max-height: 2000px; /* đủ lớn, KHÔNG gây thừa */
+  }
+}
+/* ===============================
+   MOBILE: ảnh + content CHUNG FORM (CHỐT 1 CƠ CHẾ)
+   - Đóng: ảnh chỉ cao theo tabs
+   - Mở: ảnh cao vừa đủ chứa detail
+   - Không ảnh thừa
+   =============================== */
+@media (max-width: 900px){
+
+  /* 0) Chỉ giữ 1 cơ chế accordion: max-height (KHÔNG dùng display none/block nữa) */
+  .branch-detail-wrap{
+    display: block !important;   /* ép luôn block để max-height hoạt động */
+    padding-top: 0 !important;
+    margin-top: 12px;
+    overflow: hidden;
+
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+
+    transition:
+      max-height .45s cubic-bezier(.4,0,.2,1),
+      opacity .25s ease,
+      transform .25s ease;
+  }
+
+  /* Khi mở */
+  .branch-detail-wrap.is-open{
+    max-height: 3000px; /* đủ lớn để chứa hết content */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 1) branch-wrap KHÔNG ép cao */
+  .branch-wrap{
+    min-height: unset !important; /* chặn min-height:720 / 980 */
+    height: auto !important;
+    overflow: hidden;
+  }
+
+  /* 2) Ảnh nền ăn theo chiều cao wrapper (wrapper cao theo content) */
+  .branch-wrap__img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 3) Shade phải có position để phủ đúng */
+  .branch-wrap__shade{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* 4) content là thứ "đẩy height" cho wrapper */
+  .branch-wrap__content{
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  /* 5) Tabs vẫn nằm TRÊN ẢNH */
+  .branch-tabs2{
+    grid-template-columns: 1fr; /* mobile 1 cột */
+    gap: 12px;
+  }
+
+  /* 6) Detail gọn hơn */
+  .branch-detail{
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .bd-gallery img{ height: 160px; }
+  .bd-map iframe{ height: 160px; }
+
+  /* 7) Icon mở/đóng cho tab */
+  .btab2{
+    position: relative;
+  }
+  .btab2::after{
+    content: "▼";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 900;
+    opacity: .45;
+    transition: .25s ease;
+  }
+  .btab2.is-open::after{
+    transform: translateY(-50%) rotate(180deg);
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  /* 8) Chặn “dư đáy” do spacing */
+  .branch-detail,
+  .branch-detail-wrap{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
