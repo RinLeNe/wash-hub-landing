@@ -1561,61 +1561,46 @@ body{
   border-radius:4px;
   background:linear-gradient(180deg,var(--orange),var(--orange2));
 }
-/* ===============================
-   MOBILE: Branch tabs scroll + snap
-================================= */
-@media (max-width: 768px){
-
-  /* Wrapper cho tabs */
-  .branch-tabs2{
-    display:flex;
-    flex-direction:row;
-    gap:14px;
-
-    overflow-x:auto;
-    overflow-y:hidden;
-
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-
-    padding-bottom:10px;
+/* ===== MOBILE ACCORDION FOR BRANCH ===== */
+@media (max-width: 900px) {
+  /* Ẩn chi tiết mặc định */
+  .branch-detail-wrap {
+    display: none;
+    padding-top: 0 !important;
   }
 
-  /* Ẩn scrollbar xấu */
-  .branch-tabs2::-webkit-scrollbar{
-    display:none;
+  /* Khi mở accordion */
+  .branch-detail-wrap.is-open {
+    display: block;
+    animation: branchSlideDown .35s ease;
   }
 
-  /* Card chi nhánh */
-  .btab2{
-    flex: 0 0 82%;
-    max-width:82%;
-
-    scroll-snap-align: start;
-
-    min-height:110px;
-    padding:16px 18px;
-
-    display:flex;
-    align-items:center;
-    gap:14px;
+  /* Chi tiết gọn hơn cho mobile */
+  .branch-detail {
+    grid-template-columns: 1fr;
+    padding: 16px;
   }
 
-  /* Ảnh thumbnail trong card */
-  .btab2__thumb{
-    width:72px;
-    height:72px;
-    border-radius:16px;
-    flex-shrink:0;
+  .branch-detail__right {
+    grid-template-rows: auto auto;
   }
 
-  /* Text canh trái rõ ràng */
-  .branch-tab__title{
-    font-size:16px;
+  .bd-gallery img {
+    height: 160px;
   }
 
-  .branch-tab__sub{
-    font-size:13px;
-    opacity:.85;
+  .bd-map iframe {
+    height: 160px;
+  }
+}
+
+@keyframes branchSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
