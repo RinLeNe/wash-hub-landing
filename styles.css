@@ -1704,3 +1704,37 @@ body{
     transform: translateY(0);
   }
 }
+/* ===== FIX BACKGROUND IMAGE FOR BRANCH (MOBILE) ===== */
+@media (max-width: 900px) {
+
+  .branch-wrap {
+    min-height: auto;          /* bỏ min-height cứng */
+    padding-bottom: 14px;
+  }
+
+  .branch-wrap__img {
+    position: relative;
+    height: 260px;             /* chiều cao hợp lý cho mobile */
+    min-height: 220px;
+    object-fit: cover;
+    object-position: center top; /* KHÔNG cắt đầu ảnh */
+    transform: none;
+  }
+
+  /* overlay nhẹ lại để không quá tối */
+  .branch-wrap__shade {
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,.18) 0%,
+      rgba(0,0,0,.35) 55%,
+      rgba(0,0,0,.55) 100%
+    );
+  }
+
+  /* content không đè quá sâu lên ảnh */
+  .branch-wrap__content {
+    padding: 10px;
+    margin-top: -6px;
+  }
+}
+
