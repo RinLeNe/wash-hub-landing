@@ -1723,3 +1723,66 @@ body{
     padding-bottom: 0 !important;
   }
 }
+@media (max-width: 900px){
+  .hero2__chips{ display:none !important; }
+}
+@media (max-width: 900px){
+
+  /* Topbar: 1 hàng, không wrap, nếu thiếu chỗ thì scroll ngang */
+  .topbar__wrap{
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .topbar__wrap::-webkit-scrollbar{ display:none; }
+  .topbar__wrap{ scrollbar-width: none; }
+
+  .topbar__left,
+  .topbar__right{
+    flex-wrap: nowrap !important;
+    gap: 10px;
+  }
+
+  /* Chip gọn hơn */
+  .chip{
+    white-space: nowrap;
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+  /* Nút đặt lịch trên topbar nhỏ lại */
+  .topbar .btn--sm{
+    white-space: nowrap;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 900px){
+  .header__wrap{
+    flex-wrap: nowrap !important;
+    gap: 10px;
+  }
+
+  /* Brand co lại (đỡ chiếm chỗ) */
+  .brand{ min-width: 0 !important; }
+  .brand__text{ min-width: 0; }
+  .brand__tag{ display:none; } /* mobile bỏ tagline để đủ chỗ */
+  .brand__name{ font-size: 16px; }
+
+  /* Actions: 1 hàng, không wrap */
+  .header__actions{
+    flex-wrap: nowrap !important;
+    gap: 8px;
+    min-width: unset !important;
+  }
+
+  /* Nút gọn lại để vừa 1 hàng */
+  .header__actions .btn{
+    padding: 10px 12px;
+    font-size: 13px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+}
