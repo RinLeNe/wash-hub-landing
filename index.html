@@ -530,46 +530,61 @@
             }
         };
         const detailWrap = document.querySelector(".branch-detail-wrap");
+  const defaultContainer = detailWrap.parentElement;
 
   document.querySelectorAll(".btab2").forEach(btn => {
     btn.addEventListener("click", () => {
       const isMobile = window.innerWidth <= 900;
       const branchId = btn.dataset.branch;
-      const isActive = btn.classList.contains("is-active");
+      const isOpen = btn.classList.contains("is-open");
 
-      // reset active tab
-      document.querySelectorAll(".btab2").forEach(b => b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-
-      renderBranch(branchId);
+      // reset trạng thái
+      document.querySelectorAll(".btab2").forEach(b => {
+        b.classList.remove("is-active", "is-open");
+      });
 
       if (isMobile) {
-        // toggle accordion
-        if (isActive && detailWrap.classList.contains("is-open")) {
-          detailWrap.classList.remove("is-open");
-        } else {
-          detailWrap.classList.add("is-open");
-
-          // scroll cho mobile dễ nhìn
-          setTimeout(() => {
-            detailWrap.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-          }, 50);
+        // đóng nếu đang mở
+        if (isOpen) {
+          detailWrap.remove();
+          return;
         }
+
+        // active tab
+        btn.classList.add("is-active", "is-open");
+
+        // render dữ liệu
+        renderBranch(branchId);
+
+        // move accordion xuống ngay sau tab
+        btn.insertAdjacentElement("afterend", detailWrap);
+
+        detailWrap.classList.add("is-accordion");
+
+        // scroll nhẹ
+        setTimeout(() => {
+          detailWrap.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+        }, 50);
+
       } else {
-        // desktop luôn mở
-        detailWrap.classList.remove("is-open");
-        detailWrap.style.display = "block";
+        // DESKTOP
+        btn.classList.add("is-active");
+        renderBranch(branchId);
+
+        // trả về vị trí gốc nếu cần
+        if (!defaultContainer.contains(detailWrap)) {
+          defaultContainer.appendChild(detailWrap);
+        }
       }
     });
   });
 
-  // init desktop default
+  // INIT desktop
   if (window.innerWidth > 900) {
     renderBranch(1);
-    detailWrap.style.display = "block";
   }
         function renderBranch(id) {
             const b = BRANCHES[id];
