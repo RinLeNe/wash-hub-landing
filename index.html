@@ -14,8 +14,8 @@
     <div class="topbar">
         <div class="container topbar__wrap">
             <div class="topbar__left">
-                <span class="chip">📍 <strong id="branchAddressTop">4 Bát Sứ - Hoàn Kiếm</strong></span>
-                <span class="chip">🕒 <strong>24/7</strong></span>
+                <span class="chip"><strong id="branchAddressTop">4 Bát Sứ - Hoàn Kiếm</strong></span>
+                <span class="chip"><strong>24/7</strong></span>
             </div>
             <div class="topbar__right">
                 <a class="chip chip--link" id="branchHotlineTopLink" href="tel:0936601683">
@@ -177,56 +177,46 @@
                 <div class="branch-wrap__content">
                     <!-- Tabs (trên cùng) -->
                     <div class="branch-tabs2">
-                        <button class="btab2 is-active" data-branch="1">
-                            <div class="btab2__thumb">
-                                <img src="assets/storefront.jpg" alt="Chi nhánh 1">
-                            </div>
+                        <button class="btab2 is-active btab2--image" data-branch="1">
+                            <img class="btab2__bg" src="assets/storefront.jpg" alt="Chi nhánh 1">
 
-                            <div class="btab2__text">
+                            <div class="btab2__overlay">
                                 <div class="btab2__title">Chi nhánh 1</div>
                                 <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
                             </div>
                         </button>
 
-                        <button class="btab2" data-branch="2">
-                            <div class="btab2__thumb">
-                                <img src="assets/storefront.jpg" alt="Chi nhánh 2">
-                            </div>
+                        <button class="btab2 btab2--image" data-branch="2">
+                            <img class="btab2__bg" src="assets/branch-2.jpg" alt="Chi nhánh 2">
 
-                            <div class="btab2__text">
+                            <div class="btab2__overlay">
                                 <div class="btab2__title">Chi nhánh 2</div>
                                 <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
                             </div>
                         </button>
 
-                        <button class="btab2" data-branch="3">
-                            <div class="btab2__thumb">
-                                <img src="assets/storefront.jpg" alt="Chi nhánh 3">
-                            </div>
+                        <button class="btab2 btab2--image" data-branch="3">
+                            <img class="btab2__bg" src="assets/branch-3.jpg" alt="Chi nhánh 3">
 
-                            <div class="btab2__text">
+                            <div class="btab2__overlay">
                                 <div class="btab2__title">Chi nhánh 3</div>
                                 <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
                             </div>
                         </button>
 
-                        <button class="btab2" data-branch="4">
-                            <div class="btab2__thumb">
-                                <img src="assets/storefront.jpg" alt="Chi nhánh 4">
-                            </div>
+                        <button class="btab2 btab2--image" data-branch="4">
+                            <img class="btab2__bg" src="assets/branch-4.jpg" alt="Chi nhánh 4">
 
-                            <div class="btab2__text">
+                            <div class="btab2__overlay">
                                 <div class="btab2__title">Chi nhánh 4</div>
                                 <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
                             </div>
                         </button>
 
-                        <button class="btab2" data-branch="5">
-                            <div class="btab2__thumb">
-                                <img src="assets/storefront.jpg" alt="Chi nhánh 5">
-                            </div>
+                        <button class="btab2 btab2--image" data-branch="5">
+                            <img class="btab2__bg" src="assets/branch-5.jpg" alt="Chi nhánh 5">
 
-                            <div class="btab2__text">
+                            <div class="btab2__overlay">
                                 <div class="btab2__title">Chi nhánh 5</div>
                                 <div class="btab2__sub">4 Bát Sứ – Hoàn Kiếm</div>
                             </div>
@@ -361,7 +351,7 @@
                     <p>Điền form – mình gọi xác nhận ngay.</p>
 
                     <form
-                        onsubmit="event.preventDefault(); alert('Demo: Bạn nối API/Telegram/Zalo để nhận data form nhé!');">
+                        onsubmit="event.preventDefault(); alert('Demo');">
                         <div class="row">
                             <div class="field">
                                 <label>Họ & tên</label>
@@ -533,14 +523,14 @@
 
         document.querySelectorAll(".btab2").forEach(btn => {
             btn.onclick = () => {
-    document.querySelectorAll(".btab2").forEach(b => b.classList.remove("is-active"));
-    btn.classList.add("is-active");
+                document.querySelectorAll(".btab2").forEach(b => b.classList.remove("is-active"));
+                btn.classList.add("is-active");
 
-    renderBranch(btn.dataset.branch);
+                renderBranch(btn.dataset.branch);
 
-    // 🔑 MOBILE: mở panel + cho ảnh giãn theo content
-    document.querySelector(".branch-wrap").classList.add("is-open");
-  };
+                // 🔑 MOBILE: mở panel + cho ảnh giãn theo content
+                document.querySelector(".branch-wrap").classList.add("is-open");
+            };
             btn.addEventListener("click", () => {
                 const isMobile = window.innerWidth <= 900;
                 const branchId = btn.dataset.branch;
@@ -663,4 +653,3 @@
 </body>
 
 </html>
-
