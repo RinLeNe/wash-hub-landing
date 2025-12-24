@@ -361,7 +361,7 @@
                     <p>Điền form – mình gọi xác nhận ngay.</p>
 
                     <form
-                        onsubmit="event.preventDefault(); alert('Demo');">
+                        onsubmit="event.preventDefault(); alert('Demo: Bạn nối API/Telegram/Zalo để nhận data form nhé!');">
                         <div class="row">
                             <div class="field">
                                 <label>Họ & tên</label>
@@ -529,7 +529,48 @@
                 map: "https://www.google.com/maps?q=H%C3%A0%20N%E1%BB%99i&output=embed"
             }
         };
+        const detailWrap = document.querySelector(".branch-detail-wrap");
 
+  document.querySelectorAll(".btab2").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const isMobile = window.innerWidth <= 900;
+      const branchId = btn.dataset.branch;
+      const isActive = btn.classList.contains("is-active");
+
+      // reset active tab
+      document.querySelectorAll(".btab2").forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+
+      renderBranch(branchId);
+
+      if (isMobile) {
+        // toggle accordion
+        if (isActive && detailWrap.classList.contains("is-open")) {
+          detailWrap.classList.remove("is-open");
+        } else {
+          detailWrap.classList.add("is-open");
+
+          // scroll cho mobile dễ nhìn
+          setTimeout(() => {
+            detailWrap.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 50);
+        }
+      } else {
+        // desktop luôn mở
+        detailWrap.classList.remove("is-open");
+        detailWrap.style.display = "block";
+      }
+    });
+  });
+
+  // init desktop default
+  if (window.innerWidth > 900) {
+    renderBranch(1);
+    detailWrap.style.display = "block";
+  }
         function renderBranch(id) {
             const b = BRANCHES[id];
             if (!b) return;
@@ -601,4 +642,3 @@
 </body>
 
 </html>
-
