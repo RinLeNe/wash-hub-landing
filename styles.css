@@ -2180,3 +2180,137 @@ body{
     pointer-events: none;
   }
 }
+.lang-switch{
+  display:flex;
+  gap:6px;
+}
+
+.lang-switch button{
+  padding:6px 10px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.lang-switch button:hover{
+  background:var(--orange);
+  color:#fff;
+}
+
+/* Mobile: gọn hơn */
+@media(max-width:900px){
+  .lang-switch{
+    gap:4px;
+  }
+  .lang-switch button{
+    padding:4px 8px;
+    font-size:12px;
+  }
+}
+/* =========================
+   LANGUAGE SWITCH (VI / EN)
+   ========================= */
+
+.lang-switch {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 12px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  background: transparent;
+  color: #555;
+  transition: all .25s ease;
+}
+
+/* Hover */
+.lang-switch button:hover {
+  background: rgba(255, 165, 0, 0.15);
+  color: #ff8a00;
+}
+
+/* Active language */
+.lang-switch button.is-active {
+  background: linear-gradient(135deg, #ff9a1f, #ff7a00);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(255, 138, 0, 0.35);
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 900px) {
+  .lang-switch {
+    margin-left: 6px;
+    padding: 3px;
+  }
+
+  .lang-switch button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+/* =========================
+   INLINE LANGUAGE (VI / EN)
+   ========================= */
+
+.lang-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.lang-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 4px 6px;
+  cursor: pointer;
+  color: #475569;
+  border-radius: 6px;
+  transition: color .2s ease, background .2s ease;
+}
+
+.lang-btn:hover {
+  color: var(--orange);
+  background: rgba(242,140,27,.12);
+}
+
+.lang-btn.is-active {
+  color: var(--orange);
+  background: rgba(242,140,27,.18);
+}
+
+.lang-sep {
+  opacity: .35;
+  font-weight: 600;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .lang-inline {
+    font-size: 12px;
+    margin-right: 4px;
+  }
+
+  .lang-btn {
+    padding: 3px 5px;
+  }
+}
