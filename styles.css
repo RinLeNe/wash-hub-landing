@@ -1738,3 +1738,16 @@ body{
   }
 }
 
+@media (max-width: 900px) {
+
+  /* khi accordion mở → ảnh không kéo dài */
+  .branch-detail-wrap.is-open {
+    margin-top: 12px;
+  }
+
+  /* tránh tạo khoảng trống ảo */
+  .branch-wrap__img + .branch-wrap__shade {
+    height: 260px;
+  }
+}
+
