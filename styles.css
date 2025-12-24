@@ -1604,3 +1604,57 @@ body{
     transform: translateY(0);
   }
 }
+/* ===== MOBILE: Branch accordion under tab ===== */
+@media (max-width: 900px) {
+
+  .branch-detail-wrap {
+    margin-top: 10px;
+    padding-top: 0 !important;
+  }
+
+  .branch-detail-wrap.is-accordion {
+    animation: accordionDown .35s ease;
+  }
+
+  .branch-detail {
+    grid-template-columns: 1fr;
+    padding: 16px 16px 18px;
+  }
+
+  /* thu gọn cho mobile */
+  .bd-gallery img { height: 150px; }
+  .bd-map iframe { height: 150px; }
+
+  /* icon mở / đóng */
+  .btab2 {
+    position: relative;
+  }
+
+  .btab2::after {
+    content: "▼";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 900;
+    opacity: .4;
+    transition: .25s ease;
+  }
+
+  .btab2.is-open::after {
+    transform: translateY(-50%) rotate(180deg);
+    opacity: .9;
+    color: var(--orange);
+  }
+}
+
+@keyframes accordionDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
