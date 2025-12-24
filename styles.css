@@ -1704,156 +1704,60 @@ body{
     transform: translateY(0);
   }
 }
-/* ===== FIX BACKGROUND IMAGE FOR BRANCH (MOBILE) ===== */
-@media (max-width: 900px) {
-
-  .branch-wrap {
-    min-height: auto;          /* bỏ min-height cứng */
-    padding-bottom: 14px;
-  }
-
-  .branch-wrap__img {
-    position: relative;
-    height: 260px;             /* chiều cao hợp lý cho mobile */
-    min-height: 220px;
-    object-fit: cover;
-    object-position: center top; /* KHÔNG cắt đầu ảnh */
-    transform: none;
-  }
-
-  /* overlay nhẹ lại để không quá tối */
-  .branch-wrap__shade {
-    background: linear-gradient(
-      180deg,
-      rgba(0,0,0,.18) 0%,
-      rgba(0,0,0,.35) 55%,
-      rgba(0,0,0,.55) 100%
-    );
-  }
-
-  /* content không đè quá sâu lên ảnh */
-  .branch-wrap__content {
-    padding: 10px;
-    margin-top: -6px;
-  }
-}
-@media (max-width: 900px) {
-
-  /* khi accordion mở → ảnh không kéo dài */
-  .branch-detail-wrap.is-open {
-    margin-top: 12px;
-  }
-
-  /* tránh tạo khoảng trống ảo */
-  .branch-wrap__img + .branch-wrap__shade {
-    height: 260px;
-  }
-}
-
-@media (max-width: 900px) {
-
-  .branch-wrap {
-    border-radius: 22px;
-  }
-
-  .branch-wrap__img {
-    border-radius: 22px 22px 0 0;
-  }
-
-  .branch-wrap__content {
-    margin-top: -8px;
-  }
-}
-/* ===== FIX: mobile không bị thừa ảnh nền, chiều cao theo content ===== */
+/* ===== Mobile ONLY: Tabs + content đè lên ảnh (desktop giữ nguyên) ===== */
 @media (max-width: 900px){
 
-  /* BỎ min-height để khối cao đúng theo nội dung */
+  /* đảm bảo wrap có nền ảnh để content nằm chung */
   .branch-wrap{
-    min-height: unset !important;
-    height: auto !important;
+    position: relative;
+    overflow: hidden;
+    min-height: 680px;         /* chỉnh số này nếu cần */
   }
 
-  /* đảm bảo lớp shade thật sự phủ lên ảnh */
+  /* ảnh nền phủ full (mobile) */
+  .branch-wrap__img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* shade phải có position + z-index */
   .branch-wrap__shade{
     position: absolute;
     inset: 0;
+    z-index: 1;
   }
 
-  /* ảnh nền fill đúng chiều cao container (container = content) */
-  .branch-wrap__img{
-    height: 100%;
+  /* content phủ lên ảnh (mobile) */
+  .branch-wrap__content{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+
+    pointer-events: none; /* chặn click toàn vùng */
   }
-}
 
-/* nếu bạn còn có rule này ở dưới: .branch-wrap{min-height:980px;} thì override luôn */
-@media (max-width: 980px){
-  .branch-wrap{ min-height: unset !important; }
-}
-/* ===== FIX: Tabs + content nằm TRÊN ẢNH (overlay) ===== */
-.branch-wrap{
-  position: relative;
-  overflow: hidden;
-}
-
-/* Ảnh nền phủ full */
-.branch-wrap__img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit: cover;
-}
-
-/* lớp tối phủ trên ảnh */
-.branch-wrap__shade{
-  position:absolute;
-  inset:0;
-  z-index:1;
-}
-
-/* content phải phủ lên ảnh (không tham gia layout bình thường) */
-.branch-wrap__content{
-  position:absolute;
-  inset:0;
-  z-index:2;
-
-  /* layout nội dung */
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  padding:14px;
-
-  /* quan trọng: không để content làm “tách khối” ra ngoài */
-  pointer-events:none; /* chặn click toàn vùng */
-}
-
-/* nhưng tabs + nội dung cần click được */
-.branch-tabs2,
-.branch-detail-wrap{
-  pointer-events:auto;
-}
-
-/* đảm bảo tabs nằm trên cùng của ảnh */
-.branch-tabs2{
-  margin:0;
-}
-
-/* phần detail nằm dưới tabs, vẫn nằm trong ảnh */
-.branch-detail-wrap{
-  margin-top: 8px;
-}
-
-/* Mobile: không bị “thừa ảnh” — cho chiều cao hợp lý */
-@media (max-width: 900px){
-  .branch-wrap{
-    /* bạn có thể chỉnh số này để vừa đúng form bạn muốn */
-    min-height: 680px;
+  /* nhưng vẫn click được tabs + phần xổ */
+  .branch-tabs2,
+  .branch-detail-wrap{
+    pointer-events: auto;
   }
+
+  /* giữ tabs nằm trên ảnh */
+  .branch-tabs2{ margin: 0; }
+
+  /* phần detail không đẩy layout ra ngoài ảnh */
+  .branch-detail-wrap{ margin-top: 8px; }
 }
 
-/* Mobile nhỏ hơn */
+/* Mobile nhỏ hơn: giảm min-height chút */
 @media (max-width: 520px){
-  .branch-wrap{
-    min-height: 640px;
-  }
+  .branch-wrap{ min-height: 640px; }
 }
