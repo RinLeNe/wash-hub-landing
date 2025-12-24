@@ -2100,3 +2100,83 @@ body{
 .bd-thumbs img.active{
   filter: none;
 }
+/* =========================================
+   FIX MOBILE: BRANCH OVERFLOW & CHE CONTENT
+   ========================================= */
+@media (max-width: 900px){
+
+  /* 1. Wrapper ăn theo content */
+  .branch-wrap{
+    position: relative;
+    height: auto;
+    min-height: unset;
+    overflow: hidden;
+  }
+
+  /* 2. Ảnh nền chỉ làm BACKDROP */
+  .branch-wrap__img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px) brightness(.5) saturate(.7);
+    transform: scale(1.1);
+  }
+
+  .branch-wrap__shade{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* 3. Content là thứ quyết định chiều cao */
+  .branch-wrap__content{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+/* =========================================
+   MOBILE: BRANCH TABS STACK
+   ========================================= */
+@media (max-width: 900px){
+
+  .branch-tabs2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btab2{
+    width: 100%;
+    min-height: auto;
+  }
+}
+/* =========================================
+   MOBILE: ACCORDION SAFE HEIGHT
+   ========================================= */
+@media (max-width: 900px){
+
+  .branch-detail-wrap{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .45s cubic-bezier(.4,0,.2,1);
+  }
+
+  .branch-wrap.is-open .branch-detail-wrap{
+    max-height: 3000px; /* đủ lớn nhưng KHÔNG phá layout */
+  }
+}
+/* =========================================
+   MOBILE: NO OVERLAY CHE CONTENT
+   ========================================= */
+@media (max-width: 900px){
+
+  .branch-wrap__img,
+  .branch-wrap__shade{
+    pointer-events: none;
+  }
+}
