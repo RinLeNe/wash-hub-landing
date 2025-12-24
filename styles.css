@@ -1789,3 +1789,71 @@ body{
 @media (max-width: 980px){
   .branch-wrap{ min-height: unset !important; }
 }
+/* ===== FIX: Tabs + content nằm TRÊN ẢNH (overlay) ===== */
+.branch-wrap{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ảnh nền phủ full */
+.branch-wrap__img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+/* lớp tối phủ trên ảnh */
+.branch-wrap__shade{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+
+/* content phải phủ lên ảnh (không tham gia layout bình thường) */
+.branch-wrap__content{
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+  /* layout nội dung */
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:14px;
+
+  /* quan trọng: không để content làm “tách khối” ra ngoài */
+  pointer-events:none; /* chặn click toàn vùng */
+}
+
+/* nhưng tabs + nội dung cần click được */
+.branch-tabs2,
+.branch-detail-wrap{
+  pointer-events:auto;
+}
+
+/* đảm bảo tabs nằm trên cùng của ảnh */
+.branch-tabs2{
+  margin:0;
+}
+
+/* phần detail nằm dưới tabs, vẫn nằm trong ảnh */
+.branch-detail-wrap{
+  margin-top: 8px;
+}
+
+/* Mobile: không bị “thừa ảnh” — cho chiều cao hợp lý */
+@media (max-width: 900px){
+  .branch-wrap{
+    /* bạn có thể chỉnh số này để vừa đúng form bạn muốn */
+    min-height: 680px;
+  }
+}
+
+/* Mobile nhỏ hơn */
+@media (max-width: 520px){
+  .branch-wrap{
+    min-height: 640px;
+  }
+}
