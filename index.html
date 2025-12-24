@@ -46,7 +46,7 @@
             </nav>
 
             <div class="header__actions">
-                
+
                 <a class="btn btn--ghost" href="tel:0936601683">Gọi ngay</a>
                 <a class="btn btn--primary" href="#dat-lich">Đặt lịch</a>
             </div>
@@ -529,60 +529,69 @@
                 map: "https://www.google.com/maps?q=H%C3%A0%20N%E1%BB%99i&output=embed"
             }
         };
-       const detailWrap = document.querySelector(".branch-detail-wrap");
+        const detailWrap = document.querySelector(".branch-detail-wrap");
 
-  document.querySelectorAll(".btab2").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const isMobile = window.innerWidth <= 900;
-      const branchId = btn.dataset.branch;
-      const isOpen = btn.classList.contains("is-open");
+        document.querySelectorAll(".btab2").forEach(btn => {
+            btn.onclick = () => {
+    document.querySelectorAll(".btab2").forEach(b => b.classList.remove("is-active"));
+    btn.classList.add("is-active");
 
-      // reset tabs
-      document.querySelectorAll(".btab2").forEach(b => {
-        b.classList.remove("is-active", "is-open");
-      });
+    renderBranch(btn.dataset.branch);
 
-      if (isMobile) {
+    // 🔑 MOBILE: mở panel + cho ảnh giãn theo content
+    document.querySelector(".branch-wrap").classList.add("is-open");
+  };
+            btn.addEventListener("click", () => {
+                const isMobile = window.innerWidth <= 900;
+                const branchId = btn.dataset.branch;
+                const isOpen = btn.classList.contains("is-open");
 
-        // đóng nếu đang mở
-        if (isOpen) {
-          detailWrap.classList.remove("is-open");
-          return;
+                // reset tabs
+                document.querySelectorAll(".btab2").forEach(b => {
+                    b.classList.remove("is-active", "is-open");
+                });
+
+                if (isMobile) {
+
+                    // đóng nếu đang mở
+                    if (isOpen) {
+                        detailWrap.classList.remove("is-open");
+                        return;
+                    }
+
+                    // active
+                    btn.classList.add("is-active", "is-open");
+
+                    // render data
+                    renderBranch(branchId);
+
+                    // move detail xuống ngay sau tab
+                    btn.insertAdjacentElement("afterend", detailWrap);
+
+                    // mở accordion
+                    detailWrap.classList.add("is-open");
+
+                    // scroll nhẹ
+                    setTimeout(() => {
+                        detailWrap.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest"
+                        });
+                    }, 60);
+
+                } else {
+                    // DESKTOP
+                    btn.classList.add("is-active");
+                    detailWrap.classList.remove("is-open");
+                    renderBranch(branchId);
+                }
+            });
+        });
+
+        // init desktop
+        if (window.innerWidth > 900) {
+            renderBranch(1);
         }
-
-        // active
-        btn.classList.add("is-active", "is-open");
-
-        // render data
-        renderBranch(branchId);
-
-        // move detail xuống ngay sau tab
-        btn.insertAdjacentElement("afterend", detailWrap);
-
-        // mở accordion
-        detailWrap.classList.add("is-open");
-
-        // scroll nhẹ
-        setTimeout(() => {
-          detailWrap.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-          });
-        }, 60);
-
-      } else {
-        // DESKTOP
-        btn.classList.add("is-active");
-        detailWrap.classList.remove("is-open");
-        renderBranch(branchId);
-      }
-    });
-  });
-
-  // init desktop
-  if (window.innerWidth > 900) {
-    renderBranch(1);
-  }
         function renderBranch(id) {
             const b = BRANCHES[id];
             if (!b) return;
