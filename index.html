@@ -529,8 +529,7 @@
                 map: "https://www.google.com/maps?q=H%C3%A0%20N%E1%BB%99i&output=embed"
             }
         };
-        const detailWrap = document.querySelector(".branch-detail-wrap");
-  const defaultContainer = detailWrap.parentElement;
+       const detailWrap = document.querySelector(".branch-detail-wrap");
 
   document.querySelectorAll(".btab2").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -538,28 +537,30 @@
       const branchId = btn.dataset.branch;
       const isOpen = btn.classList.contains("is-open");
 
-      // reset trạng thái
+      // reset tabs
       document.querySelectorAll(".btab2").forEach(b => {
         b.classList.remove("is-active", "is-open");
       });
 
       if (isMobile) {
+
         // đóng nếu đang mở
         if (isOpen) {
-          detailWrap.remove();
+          detailWrap.classList.remove("is-open");
           return;
         }
 
-        // active tab
+        // active
         btn.classList.add("is-active", "is-open");
 
-        // render dữ liệu
+        // render data
         renderBranch(branchId);
 
-        // move accordion xuống ngay sau tab
+        // move detail xuống ngay sau tab
         btn.insertAdjacentElement("afterend", detailWrap);
 
-        detailWrap.classList.add("is-accordion");
+        // mở accordion
+        detailWrap.classList.add("is-open");
 
         // scroll nhẹ
         setTimeout(() => {
@@ -567,22 +568,18 @@
             behavior: "smooth",
             block: "nearest"
           });
-        }, 50);
+        }, 60);
 
       } else {
         // DESKTOP
         btn.classList.add("is-active");
+        detailWrap.classList.remove("is-open");
         renderBranch(branchId);
-
-        // trả về vị trí gốc nếu cần
-        if (!defaultContainer.contains(detailWrap)) {
-          defaultContainer.appendChild(detailWrap);
-        }
       }
     });
   });
 
-  // INIT desktop
+  // init desktop
   if (window.innerWidth > 900) {
     renderBranch(1);
   }
